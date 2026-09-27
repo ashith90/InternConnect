@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import DashboardLayout from '../../components/layout/DashboardLayout';
-import api from '../../utils/api';
+import api, { getServerBaseUrl } from '../../utils/api';
 import {
   Search, CheckCircle2, XCircle, Eye, FileText, Image as ImageIcon,
   Clock, ShieldCheck, ShieldX, GraduationCap, Building2, RefreshCw,
@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const SERVER_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace('/api', '');
+const SERVER_URL = getServerBaseUrl();
 
 const statusConfig = {
   pending: { label: 'Pending', icon: Clock, badge: 'bg-amber-500/15 text-amber-400 border-amber-500/30', dot: 'bg-amber-400' },

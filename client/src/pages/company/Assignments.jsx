@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import DashboardLayout from '../../components/layout/DashboardLayout';
 import StatusBadge from '../../components/shared/StatusBadge';
-import api from '../../utils/api';
+import api, { getServerBaseUrl } from '../../utils/api';
 
-const BASE_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace('/api', '');
+const BASE_URL = getServerBaseUrl();
 import {
   Plus, X, FileText, CheckCircle, Users, ClipboardList,
   Clock, ExternalLink, ChevronDown, ChevronUp, Info,

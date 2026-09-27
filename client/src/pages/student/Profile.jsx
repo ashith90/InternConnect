@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import DashboardLayout from '../../components/layout/DashboardLayout';
-import api from '../../utils/api';
+import api, { getServerBaseUrl } from '../../utils/api';
 import { fetchMe } from '../../features/auth/authSlice';
 import { Save, Upload, Plus, X, User, Zap, Shield, TrendingUp } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const BASE_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace('/api', '');
+const BASE_URL = getServerBaseUrl();
 
 const Profile = () => {
   const { user } = useSelector(s => s.auth);

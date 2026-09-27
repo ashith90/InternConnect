@@ -194,7 +194,7 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, async () => {
+app.listen(PORT, '0.0.0.0', async () => {
   console.log(`\n🚀 InternConnect Server running on port ${PORT}`);
   await seedAdmin();
   await seedSampleData();

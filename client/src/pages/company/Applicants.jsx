@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import DashboardLayout from '../../components/layout/DashboardLayout';
-import api from '../../utils/api';
+import api, { getServerBaseUrl } from '../../utils/api';
 import {
   Users, Mail, Phone, GraduationCap, FileText, ExternalLink,
   CheckCircle2, AlertCircle, Target, TrendingUp, ChevronDown,
@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const BASE_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace('/api', '');
+const BASE_URL = getServerBaseUrl();
 
 // Fit score computation (mirror of student side)
 const computeFit = (studentSkills = [], requiredSkills = []) => {
